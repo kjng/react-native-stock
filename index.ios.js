@@ -49,6 +49,12 @@ export default class Stock extends Component {
           <StockButton name='SET' code='INDEXBKK:SET' onPress={this.changeIndex} />
           <StockButton name='S&P' code='INDEXSP:.INX' onPress={this.changeIndex} />
           <StockButton name='NASDAQ' code='INDEXNASDAQ:.IXIC' onPress={this.changeIndex} />
+          <StockButton name='Apple' code='NASDAQ:AAPL' onPress={this.changeIndex} />
+          <StockButton name='Google' code='NASDAQ:GOOG' onPress={this.changeIndex} />
+          <StockButton name='Microsoft' code='NASDAQ:MSFT' onPress={this.changeIndex} />
+          <StockButton name='Facebook' code='NASDAQ:FB' onPress={this.changeIndex} />
+          <StockButton name='Amazon' code='NASDAQ:AMZN' onPress={this.changeIndex} />
+          <StockButton name='Alibaba' code='NASDAQ:BABA' onPress={this.changeIndex} />
         </View>
       </View>
     );
