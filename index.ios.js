@@ -9,6 +9,17 @@ import {
 import StockButton from './StockButton.js';
 
 export default class Stock extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      stockName: 'SET',
+      stockCode: 'INDEXBKK:SET',
+      stockIndex: '0.00',
+      stockChangeRaw: '+0.00',
+      stockChangePercent: '0.00%'
+    }
+  }
+
   changeIndex(stockName, stockCode) {
     console.log(stockName, stockCode);
   }
@@ -18,13 +29,13 @@ export default class Stock extends Component {
       <View style={styles.container}>
         <View style={styles.header}>
           <Text style={styles.stockName}>
-            SET
+            {this.state.stockName}
           </Text>
           <Text style={styles.stockIndex}>
-            9,999.99
+            {this.state.stockIndex}
           </Text>
           <Text style={styles.stockChange}>
-            +115.23 (0.56%)
+            {this.state.stockChangeRaw} ({this.state.stockChangePercent})
           </Text>
         </View>
         <View style={styles.footer}>
