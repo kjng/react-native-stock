@@ -30,6 +30,8 @@ export default class Stock extends Component {
   }
 
   render() {
+    let colorStyle = (this.state.stockChangeRaw && this.state.stockChangeRaw[0] === '+') ? styles.green : styles.red;
+
     return (
       <View style={styles.container}>
         <View style={styles.header}>
@@ -39,7 +41,7 @@ export default class Stock extends Component {
           <Text style={styles.stockIndex}>
             {this.state.stockIndex}
           </Text>
-          <Text style={styles.stockChange}>
+          <Text style={[styles.stockChange, colorStyle]}>
             {this.state.stockChangeRaw} ({this.state.stockChangePercent})
           </Text>
         </View>
@@ -79,6 +81,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'pink'
+  },
+  red: {
+    color: 'red'
+  },
+  green: {
+    color: 'green'
   }
 });
 
