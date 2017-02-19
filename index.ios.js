@@ -20,6 +20,7 @@ export default class Stock extends Component {
       stockChangePercent: '0.00%'
     }
     this.changeIndex = this.changeIndex.bind(this);
+    this.changeIndex('SET', 'INDEXBKK:SET');
   }
 
   changeIndex(stockName, stockCode) {
