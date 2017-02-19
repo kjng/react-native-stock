@@ -6,8 +6,13 @@ import {
   View,
   TouchableOpacity
 } from 'react-native';
+import StockButton from './StockButton.js';
 
 export default class Stock extends Component {
+  changeIndex(stockName, stockCode) {
+    console.log(stockName, stockCode);
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -23,33 +28,9 @@ export default class Stock extends Component {
           </Text>
         </View>
         <View style={styles.footer}>
-          <TouchableOpacity style={styles.button}>
-            <Text>SET</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
-            <Text>S&P</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
-            <Text>NASDAQ</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
-            <Text>Dow Jones</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
-            <Text>Shanghai</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
-            <Text>Nikkei</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
-            <Text>Hang Seng</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
-            <Text>TSEC</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
-            <Text>EURO</Text>
-          </TouchableOpacity>
+          <StockButton name='SET' code='INDEXBKK:SET' onPress={this.changeIndex} />
+          <StockButton name='S&P' code='INDEXSP:.INX' onPress={this.changeIndex} />
+          <StockButton name='NASDAQ' code='INDEXNASDAQ:.IXIC' onPress={this.changeIndex} />
         </View>
       </View>
     );
@@ -82,16 +63,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'pink'
-  },
-  button: {
-    margin: 10,
-    borderWidth: 1,
-    width: 100,
-    height: 50,
-    borderRadius: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'lightgrey'
   }
 });
 
