@@ -7,6 +7,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 import StockButton from './StockButton.js';
+import API from './api.js';
 
 export default class Stock extends Component {
   constructor(props) {
@@ -18,10 +19,13 @@ export default class Stock extends Component {
       stockChangeRaw: '+0.00',
       stockChangePercent: '0.00%'
     }
+    this.changeIndex = this.changeIndex.bind(this);
   }
 
   changeIndex(stockName, stockCode) {
-    console.log(stockName, stockCode);
+    API(stockCode).then(data => {
+      this.setState({...data, stockName, stockCode});
+    });
   }
 
   render() {

@@ -9,7 +9,7 @@ export default (code) => {
     })
     .then(text => {
       console.log(text);
-      let json = JSON.parse(text.replace('//', '')[0]);
+      let json = JSON.parse(text.replace('//', ''))[0];
       return {
         stockIndex: json.l,
         stockChangeRaw: json.c,
