@@ -69,7 +69,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'yellow',
+    backgroundColor: 'white',
+    marginBottom: 30
   },
   stockName: {
     fontSize: 30
@@ -86,7 +87,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'pink'
+    backgroundColor: 'steelblue',
+    paddingTop: 50
   },
   red: {
     color: 'red'
